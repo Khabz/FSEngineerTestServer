@@ -1,6 +1,7 @@
 using Assessment.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -23,16 +24,29 @@ namespace Assessment
         }
 
         public IConfiguration Configuration { get; }
-
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.SetIsOriginAllowed(isOriginAllowed: _ => true).AllowAnyHeader().AllowAnyMethod().AllowCredentials();
+                });
+            });
             services.AddControllers();
             services.AddRouting(options => options.LowercaseUrls = true);
-            services.AddHttpClient<ChuckNorriesService>(client =>
+            // Add Chuck Norries Client
+            services.AddHttpClient<ChuckNorriesService>((client) =>
             {
                 client.BaseAddress = new Uri(Configuration["ChuckNorriesServiceUrl"]);
+            });
+            //Add Swapi Client
+            services.AddHttpClient<SwapiService>((client) =>
+            {
+                client.BaseAddress = new Uri(Configuration["SwapiServiceUrl"]);
             });
             services.AddSwaggerGen(c =>
             {
@@ -51,6 +65,13 @@ namespace Assessment
             }
 
             app.UseHttpsRedirection();
+            app.UseForwardedHeaders(new ForwardedHeadersOptions
+            {
+                ForwardedHeaders = ForwardedHeaders.XForwardedFor |
+                   ForwardedHeaders.XForwardedProto
+            });
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseRouting();
 
