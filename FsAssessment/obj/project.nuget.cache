@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "A9AXOa8v6kYTrzV8lCy8jN6aN7R+32/JFXrI+sbCxl/5B9oCtftAB6xUsEkbUo2ezo8/aneshkfjqvIToNFYbw==",
+  "dgSpecHash": "/xfE+C9a9gXAqWxb4Sh0gMGAU3se/MAzTddYx44xO6md1Fau/x0hrpZYTfN07AAF37C4TZU05x2yNrxSnWY1/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\khabu\\source\\repos\\FsAssessment\\FsAssessment\\FsAssessment.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\khabu\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+    "C:\\Users\\khabu\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\khabu\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512",
+    "C:\\Users\\khabu\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\khabu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\khabu\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
   ],
   "logs": []
 }
