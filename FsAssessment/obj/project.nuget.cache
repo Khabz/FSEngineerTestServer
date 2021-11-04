@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "A9AXOa8v6kYTrzV8lCy8jN6aN7R+32/JFXrI+sbCxl/5B9oCtftAB6xUsEkbUo2ezo8/aneshkfjqvIToNFYbw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\khabu\\source\\repos\\FsAssessment\\FsAssessment\\FsAssessment.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\khabu\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}
